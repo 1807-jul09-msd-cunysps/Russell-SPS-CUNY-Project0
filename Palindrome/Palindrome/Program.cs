@@ -13,7 +13,7 @@ namespace Palindrome
         {
             Palindromic pal = new Palindromic();
             Console.WriteLine(pal.PalindromicChecker());
-            Console.ReadLine();
+            Console.Read();
         }
     }
 }
