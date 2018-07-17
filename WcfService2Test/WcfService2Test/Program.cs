@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WcfService2Test.ConvertMyTemp;
-using WcfService2Test.Calculator; 
+
 
 namespace WcfService2Test
 {
