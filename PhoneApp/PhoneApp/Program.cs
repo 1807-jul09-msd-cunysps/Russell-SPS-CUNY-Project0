@@ -12,6 +12,10 @@ namespace PhoneApp
         static void Main(string[] args)
         {
             
+            Person p = new Person();
+            p.Adder("Kyle", "Chong");
+            p.Read();
+            Console.ReadLine();
         }
     }
 }
