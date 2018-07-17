@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2dae448a-1d2d-440a-af3a-eff74fe1733a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="462334e9-d998-4f3d-b4ea-982154457961" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://www.dneonline.com/calculator.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="calculator.disco" MetadataType="Disco" ID="2eb6aa05-3820-4a04-b44a-b1f9c49bb430" SourceId="1" SourceUrl="http://www.dneonline.com/calculator.asmx?disco" />
-    <MetadataFile FileName="calculator.wsdl" MetadataType="Wsdl" ID="9c4097af-5605-49f9-ba6b-85b52ebb27bf" SourceId="1" SourceUrl="http://www.dneonline.com/calculator.asmx?wsdl" />
+    <MetadataFile FileName="calculator.disco" MetadataType="Disco" ID="ef5a29b6-7fc4-43d3-a846-9a0c131c8e1b" SourceId="1" SourceUrl="http://www.dneonline.com/calculator.asmx?disco" />
+    <MetadataFile FileName="calculator.wsdl" MetadataType="Wsdl" ID="dc4b9283-da00-4730-9f86-647089e7a1c6" SourceId="1" SourceUrl="http://www.dneonline.com/calculator.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

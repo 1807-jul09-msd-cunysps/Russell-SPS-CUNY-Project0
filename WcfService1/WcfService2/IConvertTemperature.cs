@@ -18,7 +18,6 @@ namespace WcfService2
         [OperationContract]
         string FtoC(decimal fahrenheit);
     }
-    [ServiceContract]
 
     
    

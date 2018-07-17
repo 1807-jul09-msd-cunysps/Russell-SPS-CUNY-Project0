@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfService2.Calculator {
+namespace WcfService2Test.Calc {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Calculator.CalculatorSoap")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Calc.CalculatorSoap")]
     public interface CalculatorSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
@@ -41,12 +41,12 @@ namespace WcfService2.Calculator {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface CalculatorSoapChannel : WcfService2.Calculator.CalculatorSoap, System.ServiceModel.IClientChannel {
+    public interface CalculatorSoapChannel : WcfService2Test.Calc.CalculatorSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CalculatorSoapClient : System.ServiceModel.ClientBase<WcfService2.Calculator.CalculatorSoap>, WcfService2.Calculator.CalculatorSoap {
+    public partial class CalculatorSoapClient : System.ServiceModel.ClientBase<WcfService2Test.Calc.CalculatorSoap>, WcfService2Test.Calc.CalculatorSoap {
         
         public CalculatorSoapClient() {
         }
