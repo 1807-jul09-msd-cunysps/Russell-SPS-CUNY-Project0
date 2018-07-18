@@ -14,13 +14,13 @@ namespace PhoneApp
     }
     public enum Country
     {
-        US = 1, UK = 44, India = 91, Pakistan = 92, Australia = 61
+       FR =0, US = 1, UK = 44, India = 91, Pakistan = 92, Australia = 61
     }
     public class Person : ISerializable
     {
-        public Person(string firstName)
+        public Person()
         {
-            this.firstName = firstName;
+            firstName = "russell";
             this.lastName = lastName;
             address = new Address();
             phone = new Phone();

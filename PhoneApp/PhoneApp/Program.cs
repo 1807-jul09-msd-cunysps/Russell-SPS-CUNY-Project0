@@ -15,24 +15,28 @@ namespace PhoneApp
         {
             List<Person> ContactList = new List<Person> //Contact List
             {
-                new Person("Russell"),
-                new Person("Cindy")
-
+              new Person()
+              
+                
             };
-
-            Stream stream = File.Open("ContactList.text",FileMode.Create);    //Streaming 
-            BinaryFormatter binary = new BinaryFormatter();
-
-            binary.Serialize(stream,ContactList);
+            using (Stream stream = new FileStream(@"ContactList.text", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                XmlSerializer serial = new XmlSerializer(typeof(List<Person>));
+                serial.Serialize(stream, ContactList);
+            }
             ContactList = null;
+            XmlSerializer serializer3 = new XmlSerializer(typeof(List<Person>));
 
-            stream = File.Open("ContactList.text", FileMode.Open);
+            using (FileStream fs2 = File.OpenRead(@"ContactList.text"))
+            {
+                ContactList = (List<Person>)serializer3.Deserialize(fs2);
+            }
 
-            binary = new BinaryFormatter();
-
-            
 
 
+            Person test = new Person();
+            test.firstName = "Harry";
+            ContactList.Add(test);
 
             Console.ReadLine();
         }
