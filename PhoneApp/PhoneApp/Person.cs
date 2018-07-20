@@ -16,11 +16,11 @@ namespace PhoneApp
     {
        FR =0, US = 1, UK = 44, India = 91, Pakistan = 92, Australia = 61
     }
-    public class Person : ISerializable
+    public class Person //:Iserializable
     {
-        public Person()
+        public Person(string firstName)
         {
-            firstName = "russell";
+            this.firstName = firstName;
             this.lastName = lastName;
             address = new Address();
             phone = new Phone();
@@ -30,7 +30,7 @@ namespace PhoneApp
         public string lastName { get; set; }
         public Address address { get; set; }
         public Phone phone { get; set; }
-
+        /**
         public void GetObjectData(SerializationInfo info, StreamingContext context)//Declares the information serialized
         {
             info.AddValue("First Name", firstName);
@@ -42,7 +42,7 @@ namespace PhoneApp
             firstName = (string)info.GetValue("First Name", typeof(string));
             lastName = (string)info.GetValue("First Name", typeof(string));
 
-        }
+        }**/
 
         /* public List<Person> Get()
          {
