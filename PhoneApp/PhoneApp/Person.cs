@@ -25,6 +25,13 @@ namespace PhoneApp
             address = new Address();
             phone = new Phone();
         }
+        public Person(string firstName)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            address = new Address();
+            phone = new Phone();
+        }
         public long Pid { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
