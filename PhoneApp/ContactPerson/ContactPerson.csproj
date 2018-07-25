@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D16D72EA-F3BB-4574-B8F4-09CE43557503}</ProjectGuid>
+    <ProjectGuid>{12F6F5A1-FD84-4F52-854B-0D4360DB2072}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ContactLibrary</RootNamespace>
-    <AssemblyName>ContactLibrary</AssemblyName>
+    <RootNamespace>ContactPerson</RootNamespace>
+    <AssemblyName>ContactPerson</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,12 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directory.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactLibrary\ContactLibrary.csproj">
+      <Project>{d16d72ea-f3bb-4574-b8f4-09ce43557503}</Project>
+      <Name>ContactLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

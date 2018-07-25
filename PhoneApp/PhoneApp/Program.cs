@@ -5,11 +5,14 @@ using System.Data.SqlClient;
 using System.Data;
 using System.IO;
 using Newtonsoft.Json;
+using ContactLibrary;
 
-namespace PhoneApp
+namespace ContactPerson
 {
     class Program
     {
+
+        static ContactLibrary.Directory dir = null;
         static void Main(string[] args)
         {
             #region SQL STUFF
@@ -34,7 +37,6 @@ namespace PhoneApp
                 connec.Close();
             }
             #endregion
-            List<Person> ContactList = new List<Person>(); //Contact List
             #region Default People
             /*
             Address a1 = new Address() { Pid = 1, street = "1", city = "NY", Country = Country.US, State = State.NY, houseNum = "123", zipcode = "11017" };
@@ -84,82 +86,32 @@ namespace PhoneApp
             #endregion
             switch (reply)
             {
-                #region READ
-                case 1://Read
-                    List<Person> values = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(path));
-                    foreach (Person i in values)
-                    {
-                        Console.WriteLine(i.lastName);
-                    }
+                case 1:
+                    break;
+                case 2:
+                    Console.WriteLine("Adding A Person:");
+                    Person perp = new Person();
+                    Console.WriteLine("First Name:");
+                    perp.firstName = Console.ReadLine();
+                    Console.WriteLine("Last Name:");
+                    perp.lastName = Console.ReadLine();
+                    Console.WriteLine("House Number:");
+                    perp.address.houseNum = Console.ReadLine();
+                    Console.WriteLine("Street:");
+                    perp.address.street = Console.ReadLine();
+                    Console.WriteLine("City:");
+                    perp.address.city = Console.ReadLine();
+                    Console.WriteLine("Zipcode:");
+                    perp.address.zipcode = Console.ReadLine();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
 
-                    break;
-                #endregion
-                #region Add
-                case 2://Adds another person to the file 
-                    Console.WriteLine("You want to add a person");
-                    string name = Console.ReadLine();
-                    Person newAddition = new Person(name);
-                    ContactList.Add(newAddition);
-                    string ser1 = JsonConvert.SerializeObject(ContactList, Formatting.Indented);
-                    string path1 = "ContactList.text";
-                    using (StreamWriter ting = File.AppendText(path1))
-                    {
-                        ting.Write(ser1);
-                    }
-                    break;
-                #endregion
-                #region Delete 
-                case 3://Delete
-                    Console.WriteLine("You want to delete a person");
-                    string name2 = Console.ReadLine();
-                    var deletion = (from i in ContactList
-                                    where i.firstName == name2
-                                    select i).ToList();
-                    Person person = deletion[0];
-                    ContactList.Remove(person);
-                    break;
-                #endregion
-                case 4: //Update
-                    Console.WriteLine("Update A Contact");
-                    break;
-                #region Search
-                case 5: //Search
-                    Console.WriteLine("Search Contact: name, address,phone");
-                    string search = Console.ReadLine();
-                    switch (search)
-                    {
-                        case "name":
-                            Console.WriteLine("What name?");
-                            string nameer = Console.ReadLine();
-                            var searchable = (from i in ContactList
-                                              where i.firstName == nameer
-                                              select i).ToList();
-                            Person person1 = searchable[0];
-                            Console.WriteLine(person1.address.city);
-                            break;
-                        #region Address Search
-                        /* case "address":
-                             Console.WriteLine("What address?");
-                             string addressing = Console.ReadLine();
-                             var searchable2 = (from i in ContactList
-                                               where i.firstName == addressing
-                                               select i).ToList();
-                             Person person2 = searchable2[0];
-                             Console.WriteLine(person2.firstName);
-                             break;*/
-                        #endregion
-                        case "phone":
-                            Console.WriteLine("What phone number?");
-                            string phone = Console.ReadLine();
-                            var searchable3 = (from i in ContactList
-                                               where i.firstName == phone
-                                               select i).ToList();
-                            Person person3 = searchable3[0];
-                            Console.WriteLine(person3.firstName);
-                            break;
-                    }
-                    break;
-                    #endregion
+
             }
         }
     }

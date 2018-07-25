@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactPerson", "PhoneApp\ContactPerson.csproj", "{230F69B3-713E-4AC5-8C99-F492DC1D8234}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactLibrary", "ContactLibrary\ContactLibrary.csproj", "{D16D72EA-F3BB-4574-B8F4-09CE43557503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactPerson", "ContactPerson\ContactPerson.csproj", "{12F6F5A1-FD84-4F52-854B-0D4360DB2072}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{230F69B3-713E-4AC5-8C99-F492DC1D8234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{230F69B3-713E-4AC5-8C99-F492DC1D8234}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{230F69B3-713E-4AC5-8C99-F492DC1D8234}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{230F69B3-713E-4AC5-8C99-F492DC1D8234}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D16D72EA-F3BB-4574-B8F4-09CE43557503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D16D72EA-F3BB-4574-B8F4-09CE43557503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16D72EA-F3BB-4574-B8F4-09CE43557503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16D72EA-F3BB-4574-B8F4-09CE43557503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F6F5A1-FD84-4F52-854B-0D4360DB2072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F6F5A1-FD84-4F52-854B-0D4360DB2072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F6F5A1-FD84-4F52-854B-0D4360DB2072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F6F5A1-FD84-4F52-854B-0D4360DB2072}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
