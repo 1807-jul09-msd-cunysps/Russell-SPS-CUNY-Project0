@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneDirectoryApp", "PhoneDirectoryApp\PhoneDirectoryApp.csproj", "{F4FBA6FF-D1E2-441B-9168-39DCD62BA0A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCodeChallenge", "WebCodeChallenge\WebCodeChallenge.csproj", "{E1C3A879-50D7-49CB-AC3C-483F4D04A615}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4FBA6FF-D1E2-441B-9168-39DCD62BA0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4FBA6FF-D1E2-441B-9168-39DCD62BA0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4FBA6FF-D1E2-441B-9168-39DCD62BA0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4FBA6FF-D1E2-441B-9168-39DCD62BA0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C3A879-50D7-49CB-AC3C-483F4D04A615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C3A879-50D7-49CB-AC3C-483F4D04A615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C3A879-50D7-49CB-AC3C-483F4D04A615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C3A879-50D7-49CB-AC3C-483F4D04A615}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FCEF4063-413E-4FFE-8F33-9E47EDA53DAB}
+		SolutionGuid = {511CDBEC-DF6C-4F65-8D19-D5A6AD76A461}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="../CSS/StyleSheet.css" rel="stylesheet" />
+</head>
+
+  <body>
+
+      <header> </header>
+
+      <section></section>
+
+    <script>
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+
+        var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        request.onload = function () {
+            var superHeroes = request.response;
+            populateHeader(superHeroes);
+            showHeroes(superHeroes);
+        }
+        function populateHeader(superHeroes)
+        {
+            var heading = document.createElement("h1");
+            heading.textContent = superHeroes['squadName'];
+            header.appendChild(heading);
+
+            var Hometown = document.createElement("p");
+            Hometown.textContent = "HomeTown:" + superHeroes['homeTown'] + "// Formed:" + superHeroes["formed"] + "// Secret Base:"
+                + superHeroes['secretBase'] + "// Status:" + superHeroes['active'];
+            header.appendChild(Hometown);
+        }   
+        /*function showHeroes(superHeroes)
+        {
+            
+            var hero = document.createElement("article");
+            hero.textContent = superHeroes['name'];
+            var list = superHeroes['members'];
+            for (var x = 0; x < list.length; x++)
+            {
+                var art = document.createElement("article");
+                var heroNames = document.createElement("h2");
+                heroNames.textContent = list[x].name;
+                art.appendChild(heroNames);
+            }*/
+        function showHeroes(superHeroes) {
+            var list = superHeroes['members'];
+            for (var i = 0; i < list.length; i++) {
+                var art = document.createElement('article');
+                var HeroNames = document.createElement('h2');
+                HeroNames.textContent = list[i].name;
+                var HeroAge = document.createElement('p');
+                HeroAge.textContent = "Age:" + list[i].age;
+                var HeroIdentity = document.createElement('p');
+                HeroIdentity.textContent = "Secret Identity:" + list[i].secretIdentity;
+
+
+                //Create Article -> Header -> Paragraphs
+                section.appendChild(art);
+                art.appendChild(HeroNames);
+                art.appendChild(HeroAge);
+                art.appendChild(HeroIdentity);
+               
+              
+            }
+        }
+        
+    </script>
+
+  </body>
+</html>
