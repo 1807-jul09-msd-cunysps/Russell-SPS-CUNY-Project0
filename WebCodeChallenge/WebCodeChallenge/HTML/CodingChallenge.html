@@ -64,15 +64,21 @@
                 var HeroIdentity = document.createElement('p');
                 HeroIdentity.textContent = "Secret Identity:" + list[i].secretIdentity;
 
+                //Power
+                  var powerList = superHeroes['powers'];
+                  for (var i = 0; i < powerList; i++)
+                  {
+                      Console.log(powerList[i]);
+                  }
 
                 //Create Article -> Header -> Paragraphs
                 section.appendChild(art);
                 art.appendChild(HeroNames);
                 art.appendChild(HeroAge);
                 art.appendChild(HeroIdentity);
-               
-              
             }
+              
+           
         }
         
     </script>
