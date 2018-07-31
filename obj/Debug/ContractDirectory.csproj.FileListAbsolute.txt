@@ -1,0 +1,13 @@
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\obj\Debug\ContractDirectory.csprojAssemblyReference.cache
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\obj\Debug\ContractDirectory.csproj.CoreCompileInputs.cache
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\ContractDirectory.exe.config
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\ContractDirectory.exe
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\ContractDirectory.pdb
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\obj\Debug\ContractDirectory.csproj.CopyComplete
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\obj\Debug\ContractDirectory.exe
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\obj\Debug\ContractDirectory.pdb
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\NLog.config
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\NLog.dll
+C:\Users\Russe\source\repos\ContractDirectory\ContractDirectory\bin\Debug\NLog.xml
