@@ -11,6 +11,7 @@ namespace ContactAPI.Controllers
     public class PersonController : ApiController
     {
         PersonCRUD crud = new PersonCRUD();
+       // [Route("/api/Person")]
         //READ
         [HttpGet]
         public IEnumerable<Person> Get()
@@ -20,11 +21,13 @@ namespace ContactAPI.Controllers
         }
         //ADD Person
         [HttpPost]
-        public IHttpActionResult Post(Person p)
+        //[Route("/api/Post/Person")]
+        public IHttpActionResult Post([FromBody]Person p)
         {
             if (p != null)
             {
                 // Make a call to CRUD Method to insert in to DB
+                crud.Add(p);
                 return Ok();
             }
             else

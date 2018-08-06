@@ -41,6 +41,7 @@ namespace ContactDal
                         p.address.State = datareader["States"].ToString();
                         p.address.Country = datareader["Country"].ToString();
                         p.address.zipcode = datareader["zipCode"].ToString();
+                        p.phone.countrycode = datareader["countrycode"].ToString();
                         p.phone.areaCode = datareader["areaCode"].ToString();
                         p.phone.number = datareader["number"].ToString();
                         p.phone.ext = datareader["extension"].ToString();
@@ -139,7 +140,48 @@ namespace ContactDal
             $"insert into Phone (Pid, countryCode, areaCode, number, extension) values " +
             $"({newAddition1.Pid}, '{newAddition1.phone.countrycode}', '{newAddition1.phone.areaCode}', '{newAddition1.phone.number}', '{newAddition1.phone.ext}')";
                     connec.Open();
-                    SqlCommand cmd = new SqlCommand(command2, connec);
+                    SqlCommand cmd1 = new SqlCommand(command2, connec);
+                    cmd1.ExecuteNonQuery();
+                    Console.WriteLine("Successfully Added");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    connec.Close();
+                }
+            }
+        }
+
+        public void Add(Person p)
+        {
+            using (connec = new SqlConnection(ConnectionString))
+            {
+                Console.WriteLine("You want to add a person");
+                try
+                {
+                    connec.Open();
+                    cmd.Parameters.AddWithValue("@Pid", p.Pid);
+                    cmd.Parameters.AddWithValue("@firstName",p.firstName);
+                    cmd.Parameters.AddWithValue("@lastName", p.lastName);
+                    cmd.Parameters.AddWithValue("@houseNumber", p.address.houseNum);
+                    cmd.Parameters.AddWithValue("@Street", p.address.street);
+                    cmd.Parameters.AddWithValue("@City", p.address.city);
+                    cmd.Parameters.AddWithValue("@Country", p.address.Country);
+                    cmd.Parameters.AddWithValue("@zipCode", p.address.zipcode);
+                    cmd.Parameters.AddWithValue("@countryCode", p.phone.countrycode);
+                    cmd.Parameters.AddWithValue("@areaCode", p.phone.areaCode);
+                    cmd.Parameters.AddWithValue("@number", p.phone.number);
+                    cmd.Parameters.AddWithValue("@extension", p.phone.ext);
+
+                    string command2 = $"insert into Person (Pid, firstName, lastName) VALUES (@Pid, @firstName, @lastName) " +
+            $"insert into Address (Pid,houseNumber, Street, City, States, Country, zipCode) VALUES " +
+            $"(@Pid, @houseNumber, @Street, @City, @State, @Country, @zipCode) " +
+            $"insert into Phone (Pid, countryCode, areaCode, number, extension) values " +
+            $"(@Pid, @countryCode, @areaCode, @number, @extension)";
+                    cmd.CommandText = command2;
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Successfully Added");
                 }
