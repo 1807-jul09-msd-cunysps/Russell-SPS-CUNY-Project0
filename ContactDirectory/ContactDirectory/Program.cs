@@ -1,5 +1,6 @@
 ﻿using System;
 using ContactDal;
+using ContactLibrary;
 
 namespace PhoneApp
 {
@@ -30,6 +31,24 @@ namespace PhoneApp
                     #endregion
                     #region ADD_DATA
                     case "2":
+                       
+                        /*Person p = new Person();
+                        p.Pid = 25;
+                        p.address.Pid = 25;
+                        p.phone.Pid = 25;
+                        p.firstName = "Larry";
+                        p.lastName = "d";
+                        p.address.houseNum = "d";
+                        p.address.street = "d";
+                        p.address.city = "d";
+                        p.address.State = "d";
+                        p.address.Country = "d";
+                        p.address.zipcode = "d";
+                        p.phone.countrycode = "";
+                        p.phone.areaCode = "d";
+                        p.phone.number = "d";
+                        p.phone.ext = "d";
+                        FindPeople.Add(p);*/
                         FindPeople.Add();
                         break;
                     #endregion

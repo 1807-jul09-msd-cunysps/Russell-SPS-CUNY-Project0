@@ -99,8 +99,8 @@ namespace ContactDal
         }
         #endregion
         //INSERT METHOD
-        #region InsertPerson 
-        public void Add()
+        #region InsertPersonToConsole
+       public void Add()
         {
             using (connec = new SqlConnection(ConnectionString))
             {
@@ -154,36 +154,48 @@ namespace ContactDal
                 }
             }
         }
-
+        #endregion
         public void Add(Person p)
         {
             using (connec = new SqlConnection(ConnectionString))
             {
-                Console.WriteLine("You want to add a person");
+                Person NewPerson = p;
+                Console.WriteLine(NewPerson.firstName);
                 try
                 {
                     connec.Open();
-                    cmd.Parameters.AddWithValue("@Pid", p.Pid);
-                    cmd.Parameters.AddWithValue("@firstName",p.firstName);
-                    cmd.Parameters.AddWithValue("@lastName", p.lastName);
-                    cmd.Parameters.AddWithValue("@houseNumber", p.address.houseNum);
-                    cmd.Parameters.AddWithValue("@Street", p.address.street);
-                    cmd.Parameters.AddWithValue("@City", p.address.city);
-                    cmd.Parameters.AddWithValue("@Country", p.address.Country);
-                    cmd.Parameters.AddWithValue("@zipCode", p.address.zipcode);
-                    cmd.Parameters.AddWithValue("@countryCode", p.phone.countrycode);
-                    cmd.Parameters.AddWithValue("@areaCode", p.phone.areaCode);
-                    cmd.Parameters.AddWithValue("@number", p.phone.number);
-                    cmd.Parameters.AddWithValue("@extension", p.phone.ext);
+                    SqlCommand cmd2 = new SqlCommand();
 
-                    string command2 = $"insert into Person (Pid, firstName, lastName) VALUES (@Pid, @firstName, @lastName) " +
-            $"insert into Address (Pid,houseNumber, Street, City, States, Country, zipCode) VALUES " +
-            $"(@Pid, @houseNumber, @Street, @City, @State, @Country, @zipCode) " +
-            $"insert into Phone (Pid, countryCode, areaCode, number, extension) values " +
-            $"(@Pid, @countryCode, @areaCode, @number, @extension)";
-                    cmd.CommandText = command2;
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Successfully Added");
+                    string command2 = $"INSERT into Person VALUES ('{NewPerson.firstName}', '{NewPerson.lastName}') select cast(scope_identity() as int)";
+                    cmd2 = new SqlCommand(command2, connec);
+                    int pid = (int)cmd2.ExecuteScalar();
+                    command2 = $"INSERT into Address VALUES" +
+                        $"({pid}, '{NewPerson.address.houseNum}', '{NewPerson.address.street}', '{NewPerson.address.city}', '{NewPerson.address.State}', '{NewPerson.address.Country}', '{NewPerson.address.zipcode}') " +
+                        $"INSERT into Phone  VALUES" +
+                        $"({pid}, '{NewPerson.phone.countrycode}', '{NewPerson.phone.areaCode}', '{NewPerson.phone.number}', '{NewPerson.phone.ext}')";
+                    cmd2 = new SqlCommand(command2, connec);
+                    /* string command2 = $"insert into Person (Pid, firstName, lastName) VALUES (@Pid, @firstName, @lastName) " +
+                         $"insert into Address (Pid,houseNumber, Street, City, States, Country, zipCode) VALUES " +
+                         $"(@Pid, @houseNumber, @Street, @City, @State, @Country, @zipCode) " +
+                         $"insert into Phone (Pid, countryCode, areaCode, number, extension) values " +
+                         $"(@Pid, @countryCode, @areaCode, @number, @extension)";
+                    
+                     cmd.Parameters.Clear();
+                     cmd.Parameters.AddWithValue("@Pid", NewPerson.Pid);
+                     cmd.Parameters.AddWithValue("@firstName",p.firstName);
+                     cmd.Parameters.AddWithValue("@lastName", p.lastName);
+                     cmd.Parameters.AddWithValue("@houseNumber", p.address.houseNum);
+                     cmd.Parameters.AddWithValue("@Street", p.address.street);
+                     cmd.Parameters.AddWithValue("@City", p.address.city);
+                     cmd.Parameters.AddWithValue("@Country", p.address.Country);
+                     cmd.Parameters.AddWithValue("@zipCode", p.address.zipcode);
+                     cmd.Parameters.AddWithValue("@countryCode", p.phone.countrycode);
+                     cmd.Parameters.AddWithValue("@areaCode", p.phone.areaCode);
+                     cmd.Parameters.AddWithValue("@number", p.phone.number);
+                     cmd.Parameters.AddWithValue("@extension", p.phone.ext);*/
+
+                    cmd2.ExecuteNonQuery();
+
                 }
                 catch (Exception e)
                 {
@@ -195,7 +207,31 @@ namespace ContactDal
                 }
             }
         }
-        #endregion
+        public void Add(Message m)
+        {
+            using (connec = new SqlConnection(ConnectionString))
+            {
+                Message NewMessage = m;
+               
+                try
+                {
+                    connec.Open();
+                    SqlCommand cmd3 = new SqlCommand();
+                    string command3 = $"INSERT into Contact VALUES ('{NewMessage.name}', '{NewMessage.email}','{NewMessage.message}')";
+                    cmd3 = new SqlCommand(command3, connec);
+                    cmd3.ExecuteNonQuery();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    connec.Close();
+                }
+            }
+        }
         //DELETE METHOD
         #region DELETE A PERSON
         public void Delete()

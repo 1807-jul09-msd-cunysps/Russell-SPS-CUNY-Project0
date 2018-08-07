@@ -14,6 +14,7 @@ namespace ContactAPI.Controllers
        // [Route("/api/Person")]
         //READ
         [HttpGet]
+        [Route("api/Person")]
         public IEnumerable<Person> Get()
         {
             var person = crud.GetPerson();
@@ -21,23 +22,36 @@ namespace ContactAPI.Controllers
         }
         //ADD Person
         [HttpPost]
-        //[Route("/api/Post/Person")]
+        [Route("api/Person")]
         public IHttpActionResult Post([FromBody]Person p)
         {
-            if (p != null)
-            {
+            try
+            {   
                 // Make a call to CRUD Method to insert in to DB
                 crud.Add(p);
                 return Ok();
             }
-            else
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message + e.StackTrace);
             }
         }
-        // to do  Put
 
-        // to do Delete
+        [Route("api/Message")]
+        [HttpPost]
+        public IHttpActionResult PostMessage([FromBody]Message m)
+        {
+            try
+            {
+                crud.Add(m);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
 
+
+        }
     }
 }

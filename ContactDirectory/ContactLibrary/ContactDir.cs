@@ -10,8 +10,6 @@ namespace ContactLibrary
     {
         public Person()
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
             address = new Address();
             phone = new Phone();
         }
@@ -50,5 +48,11 @@ namespace ContactLibrary
         {
             return areaCode + " " + number + " " + ext;
         }
+    }
+    public class Message
+    {
+        public string name { get; set; }
+        public string email { get; set; }
+        public string message { get; set; }
     }
 }
